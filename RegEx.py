@@ -16,7 +16,7 @@ with open("ger_lex.txt", "r") as ger_words:
 
 for i in text:
   #match = re.search(r"(Buch|Glas|Tisch)+(lar|ler)\b", i)
-  match = re.search(r"\w+(lar|ler)\b", i)
+  match = re.search(r"\w+(ler|lar|de|da|nin|nın|nün|nun)\b", i)
 
   if match:
     #print(match.group())
