@@ -1,20 +1,35 @@
 import re
 
-corpus = []
-
 output = open("output.txt","w+")
 
-with open("text.txt", "r") as corpus:
-    text = corpus.read().split()
-    #print (text)
+with open('ger_lex.txt') as infile:
+    lexicon = infile.read()
+    lexicon = lexicon.replace('\n', '|')
+    #print(lexicon)
+
+corpus = open("text.txt", "r")
+text = corpus.read()
+corpus.close()
+
+nouns = r'('+lexicon+')'
+#print(nouns)
+#suffixes = r'(?P<suffix>(ler|lar)?(de|da)?(nin|nın|nün|nun)?)'
+#print(suffixes)
+#print(nouns+suffixes)
+
+mixed = re.compile(nouns+r'(?P<suffix>(ler|lar)?(de|da)?(nin|nın|nün|nun)?)')
+#mixed =(nouns+suffixes)
+#print(mixed)
+#match = re.findall(mixed,text)
+#print (match)
+
+for match in re.finditer(mixed, text):
+    if(match.group('suffix')):
+        output.write(match.group()+"\n")
+        print(match.group())
 
 
-for i in text:
-  match = re.compile(r"(Text|Glas|Buch|Tisch|Geschenk|Hallo)+(ler|lar|de|da|nin|nın|nün|nun)\b")
-  result = match.search(i)
 
-  if result is not None:
-      output.write(i + "\n")
-      print(result.group())
+
 
 
