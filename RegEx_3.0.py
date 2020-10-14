@@ -17,7 +17,7 @@ nouns = r'('+lexicon+')'
 #print(suffixes)
 #print(nouns+suffixes)
 
-mixed = re.compile(nouns+r'(?P<suffix>(ler|lar)?(de|da)?(nin|nın|nün|nun)?)')
+mixed = re.compile(nouns+r'(?P<suffix>(ler|lar)?((i|ı|u|ü|)?m|(i|ı|u|ü)?n|si|sı|su|sü|i|ı|u|ü|imiz|ımız|umuz|ümüz|miz|mız|mus|müz|iniz|ınız|unuz|ünüz|niz|nız|nuz|nüz|leri|ları)?(yi|yı|yu|yü)?(ye|ya)?(den|dan|ten|tan)?(de|da|te|ta)?(nin|nın|nün|nun)?(in|ın|un|ün)?)')
 #mixed =(nouns+suffixes)
 #print(mixed)
 #match = re.findall(mixed,text)
