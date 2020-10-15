@@ -1,0 +1,18 @@
+source scripts/file_sets.bsh	# read the set of files
+
+
+# input parameter is depannot
+
+files=$1
+
+echo $files
+
+for file in ${!files}
+do
+	echo '==========================================='
+	echo ${file}_wcs.annot.dep.conllu
+	echo '==========================================='
+
+	python scripts/sagt_mixed.py ${file}_wcs.annot.dep.conllu
+
+done
