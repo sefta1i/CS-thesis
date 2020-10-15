@@ -45,7 +45,7 @@ print("EXPECTED AMOUNT OF WORDS: ")
 print(line_count)
 print("AMOUNT OF FOUND MIXED WORDS: ")
 print(count)
-print("ACCURACY :")
+print("PRECISION :")
 print(count/line_count)
 
 
